@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" aria-labelledby="app-title">
+    <h1 id="app-title">Todos</h1>
+
+    <form id="todo-form" class="todo-form" autocomplete="off">
+      <label for="todo-input" class="visually-hidden">New todo</label>
+      <input
+        id="todo-input"
+        type="text"
+        placeholder="What needs to be done?"
+        aria-describedby="items-left"
+      >
+      <button type="submit" id="add-btn">Add</button>
+    </form>
+
+    <div class="toolbar" role="toolbar" aria-label="List actions">
+      <button type="button" id="toggle-all-btn" disabled>Mark all complete</button>
+      <button type="button" id="clear-completed-btn" disabled>Clear completed</button>
+    </div>
+
+    <nav class="filters" aria-label="Filter todos">
+      <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+      <button type="button" class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+    </nav>
+
+    <p id="items-left" class="items-left" aria-live="polite" aria-atomic="true"></p>
+
+    <p id="empty-state" class="empty-state" hidden>No todos yet. Add one above.</p>
+
+    <ul id="todo-list" class="todo-list" aria-label="Todo items"></ul>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
